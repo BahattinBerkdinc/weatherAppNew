@@ -2,16 +2,16 @@
 @use "../../style/mixins" as m;
 #key-control-form {
   z-index: 11;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+
   > form {
-    min-width: 600px;
     > div {
       display: flex;
       align-items: center;
       position: relative;
-      @include m.for-mobile-only {
-        max-width: 350px;
-        margin: 0 auto;
-      }
 
       .form-control {
         height: 50px;
