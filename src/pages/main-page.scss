@@ -27,6 +27,8 @@
       transition: all 300ms ease-in-out;
       border: 1px solid v.$color-sky;
 
+      text-align: center;
+
       &:hover {
         background-color: v.$color-main;
         color: v.$color-light;
