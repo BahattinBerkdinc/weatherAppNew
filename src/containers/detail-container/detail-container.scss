@@ -1,0 +1,181 @@
+@use "../../style/variables" as v;
+@use "../../style/mixins" as m;
+
+#detail-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  padding: 3rem 0;
+
+  @include m.for-mobile-only {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  p {
+    text-align: center;
+    font-size: 2rem;
+    color: v.$color-sky;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    width: 100%;
+
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+    .short-infos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        color: v.$color-light;
+
+        svg {
+          font-size: 2rem;
+        }
+
+        > span {
+          font-size: 1.2rem;
+          font-weight: 200;
+
+          &:last-child {
+            font-size: 2.1rem;
+          }
+        }
+      }
+    }
+
+    .city-name {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      span {
+        color: v.$color-sky;
+        &:first-child {
+          font-size: 15rem;
+          font-weight: bold;
+          position: absolute;
+          left: 50%;
+          top: 65%;
+          transform: translate(-50%, -50%);
+          color: rgba(255, 255, 255, 0.119);
+          z-index: -1;
+        }
+        &:last-child {
+          font-size: 5rem;
+          font-weight: bolder;
+          color: v.$color-main;
+        }
+        @include m.for-mobile-only {
+          &:first-child {
+            font-size: 15rem;
+            top: 5rem;
+          }
+          &:last-child {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .back-btn {
+      position: absolute;
+      left: 1rem;
+      top: 1rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      background-color: v.$color-main;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      transition: all 300ms ease-in-out;
+
+      &:hover {
+        background-color: v.$color-sky;
+      }
+
+      svg {
+        font-size: 2rem;
+        color: v.$color-light;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.159);
+
+    @include m.for-mobile-only {
+      flex: 1;
+    }
+
+    > span {
+      font-size: 2rem;
+      color: v.$color-light;
+    }
+
+    .other-infos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+
+      > div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        @include m.for-mobile-only {
+          width: 150px;
+        }
+
+        span {
+          color: v.$color-light;
+          &:first-child {
+            font-size: 1rem;
+            font-weight: 400;
+          }
+          &:last-child {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .humidity {
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
+}

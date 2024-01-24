@@ -1,0 +1,44 @@
+@use "../../style/variables" as v;
+@use "../../style/mixins" as m;
+#key-control-form {
+  z-index: 11;
+  > form {
+    min-width: 600px;
+    > div {
+      display: flex;
+      align-items: center;
+      position: relative;
+      @include m.for-mobile-only {
+        max-width: 350px;
+        margin: 0 auto;
+      }
+
+      .form-control {
+        height: 50px;
+        padding: 0.2rem;
+        padding-left: 3rem;
+      }
+
+      > svg {
+        position: absolute;
+        left: 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      button {
+        position: absolute;
+        top: 0.2rem;
+        right: 0.2rem;
+        bottom: 0.2rem;
+        border: none;
+        padding: 0 1rem;
+        background-color: v.$color-main-light;
+        transition: all 300ms ease-in-out;
+
+        &:hover {
+          background-color: v.$color-sky;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import "../style/variables";
+
+form {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .form-control,
+  .form-check-input,
+  .form-select {
+    box-shadow: none !important;
+    &:focus {
+      border-color: $color-main-light;
+    }
+    &::placeholder {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.scroll-style {
+  scrollbar-width: thin;
+  scrollbar-color: $color-main-light #eee;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-main-light;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #eee;
+  }
+}

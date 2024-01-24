@@ -1,0 +1,87 @@
+@use "../../style/variables" as v;
+@use "../../style/mixins" as m;
+
+#cities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  > .form-top {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3rem;
+    .col-xl-3 {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      display: block;
+      width: 200px;
+      text-align: center;
+      text-decoration: none;
+      color: v.$color-light;
+      background-color: v.$color-sky;
+      padding: 1rem 0;
+      border-radius: 15px;
+      position: relative;
+
+      transition: all 300ms ease-in-out;
+
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+        rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+      &:hover {
+        background-color: v.$color-light;
+        color: v.$color-sky;
+      }
+
+      @include m.for-mobile-only {
+        width: 150px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .not-found {
+    text-align: center;
+    background-color: v.$color-sky;
+    color: v.$color-light;
+    padding: 1rem 0;
+    border-radius: 15px;
+  }
+
+  .dropdown {
+    border: none;
+    button {
+      background-color: v.$color-sky;
+      border: none;
+      height: 40px;
+    }
+  }
+
+  .plaka {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 4rem;
+    color: lightgray;
+    opacity: 0.2;
+  }
+}
